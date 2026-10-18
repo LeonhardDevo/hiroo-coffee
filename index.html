@@ -3,50 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HIROO | Japanese Specialty Coffee & Kitchen</title>
-    <meta name="description" content="Experience exceptional specialty coffee, handcrafted brunch, signature desserts, and a warm Wabi-Sabi atmosphere in the heart of Ashgabat. Award-nominated architectural café design.">
-    <meta name="keywords" content="Hiroo, Coffee Shop Ashgabat, Wabi-Sabi Cafe, Specialty Coffee, Brunch Ashgabat, Japanese Minimalism">
-    
+    <title>SHIZUKU 雫 | Drip Coffee & Japanese Kitchen</title>
+    <meta name="description" content="SHIZUKU — hand-drip specialty coffee, Kyoto cold drip, Uji matcha and Japanese kitchen in a cedar pavilion on the Caspian shore.">
+    <meta name="keywords" content="Shizuku, drip coffee, Kyoto cold drip, matcha, Japanese kitchen, Awaza, Caspian, wabi-sabi cafe">
+    <meta name="theme-color" content="#0F0E0D">
+    <link rel="icon" href="assets/images/logo.svg" type="image/svg+xml">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="is-loading">
+
+    <div class="preloader" id="preloader" aria-hidden="true">
+        <div class="preloader-drop"></div>
+        <div class="preloader-ripple"></div>
+        <span class="preloader-kanji">雫</span>
+    </div>
+
+    <div class="scroll-progress" id="scroll-progress"></div>
 
     <header class="navbar" id="main-header">
         <div class="nav-container">
-            <a href="#" class="nav-brand" id="nav-brand-link">
-                <img src="assets/images/logo.png" alt="HIROO Logo" class="nav-logo" id="nav-logo-img">
-                <span class="nav-title">HIROO</span>
+            <a href="#hero-section" class="nav-brand" id="nav-brand-link">
+                <img src="assets/images/logo.svg" alt="SHIZUKU logo" class="nav-logo">
+                <span class="nav-title">SHIZUKU</span>
+                <span class="nav-kanji">雫</span>
             </a>
-            
+
             <nav class="nav-links" id="main-nav-links">
-                <a href="#about" class="nav-link" id="link-about" data-i18n="nav_about">Biz Barada</a>
-                <a href="#menu" class="nav-link" id="link-menu" data-i18n="nav_menu">Menýu</a>
-                <a href="#experience" class="nav-link" id="link-experience" data-i18n="nav_experience">Amatlyklar</a>
-                <a href="#gallery" class="nav-link" id="link-gallery" data-i18n="nav_gallery">Galereýa</a>
-                <a href="#location" class="nav-link" id="link-location" data-i18n="nav_location">Salgymyz</a>
-                <a href="#reserve" class="btn btn-nav" id="link-reserve" data-i18n="nav_book_table">Stol Sargaň</a>
-                
+                <a href="#about" class="nav-link" data-i18n="nav_about">Biz barada</a>
+                <a href="#ritual" class="nav-link" data-i18n="nav_ritual">Däp-dessur</a>
+                <a href="#menu" class="nav-link" data-i18n="nav_menu">Menýu</a>
+                <a href="#gallery" class="nav-link" data-i18n="nav_gallery">Galereýa</a>
+                <a href="#location" class="nav-link" data-i18n="nav_location">Salgymyz</a>
+                <a href="#reserve" class="btn btn-nav" data-i18n="nav_book">Stol sargyt et</a>
+
                 <div class="lang-selector" id="lang-selector-container">
-                    <button class="lang-btn" id="lang-btn-dropdown" aria-label="Change Language">
+                    <button class="lang-btn" id="lang-btn-dropdown" aria-label="Change language" aria-haspopup="true">
                         <i class="fa-solid fa-globe"></i>
                         <span id="current-lang-code">TKM</span>
                         <i class="fa-solid fa-chevron-down nav-chevron"></i>
                     </button>
                     <div class="lang-dropdown" id="lang-dropdown-list">
-                        <button type="button" class="lang-option active" data-lang="tk" id="lang-opt-tk">Turkmen</button>
-                        <button type="button" class="lang-option" data-lang="ru" id="lang-opt-ru">Русский</button>
-                        <button type="button" class="lang-option" data-lang="en" id="lang-opt-en">English</button>
+                        <button type="button" class="lang-option active" data-lang="tk">Türkmen</button>
+                        <button type="button" class="lang-option" data-lang="ru">Русский</button>
+                        <button type="button" class="lang-option" data-lang="en">English</button>
                     </div>
                 </div>
             </nav>
-            
-            <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
+
+            <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Toggle navigation">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -55,381 +67,536 @@
     </header>
 
     <main>
+        <!-- 1. HERO -->
         <section class="hero" id="hero-section">
-            <div class="hero-video-wrapper">
-                <video autoplay muted loop playsinline class="hero-video" id="hero-bg-video">
-                    <source src="assets/videos/hero-bg.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="hero-overlay" id="hero-video-overlay"></div>
+            <div class="hero-slides" id="hero-slides">
+                <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1759259639356-7c6e74eed1ec?auto=format&fit=crop&w=2000&q=80')"></div>
+                <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1767840272045-b1419f025dc3?auto=format&fit=crop&w=2000&q=80')"></div>
+                <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1574676586192-b360ba6c885c?auto=format&fit=crop&w=2000&q=80')"></div>
             </div>
-            
-            <div class="hero-glow-logo-container">
-                <img src="assets/images/logo.png" alt="HIROO Glow Symbol" class="hero-glow-logo" id="hero-bg-glow-logo">
+            <div class="hero-overlay"></div>
+            <div class="grain"></div>
+
+            <div class="hero-ripples" aria-hidden="true">
+                <span></span><span></span><span></span>
             </div>
-            
+
+            <span class="hero-bg-kanji" aria-hidden="true">雫</span>
+            <span class="hero-vertical" aria-hidden="true">一滴の珈琲、一瞬の静寂</span>
+
             <div class="hero-content container">
-                <h1 class="hero-title" id="hero-main-title">HIROO</h1>
-                <p class="hero-subtitle" id="hero-sub-title" data-i18n="hero_subtitle">Ýörite Kofe • Branç • Restoran Tejirbesi</p>
-                <p class="hero-description" id="hero-desc" data-i18n="hero_description">
-                    Şäheriň merkezinde ajaýyp kofe, ýörite taýýarlanylan ertirlikler, özboluşly desertler we ýyly şäher gurşawyny başdan geçiriň.
-                </p>
+                <span class="hero-eyebrow" data-i18n="hero_tag">Awaza · Hazar kenary</span>
+                <h1 class="hero-title" id="hero-main-title" aria-label="SHIZUKU">
+                    <span>S</span><span>H</span><span>I</span><span>Z</span><span>U</span><span>K</span><span>U</span>
+                </h1>
+                <p class="hero-subtitle" data-i18n="hero_subtitle">Dripli kofe • Ýapon aşhanasy • Deňiz şemaly</p>
+                <p class="hero-description" data-i18n="hero_desc">Her käse bir damjadan başlaýar. Hazaryň kenarynda elde demlenen kofe, Kioto usulyndaky sowuk drip, matça we ýapon ertirlikleri size garaşýar.</p>
                 <div class="hero-actions">
-                    <a href="#reserve" class="btn btn-primary" id="hero-btn-reserve" data-i18n="hero_btn_reserve">Stol Sargaň</a>
-                    <a href="#menu" class="btn btn-secondary" id="hero-btn-menu" data-i18n="hero_btn_menu">Menýuny Gör</a>
+                    <a href="#reserve" class="btn btn-primary" data-i18n="hero_btn_reserve">Stol sargyt et</a>
+                    <a href="#menu" class="btn btn-secondary" data-i18n="hero_btn_menu">Menýuny gör</a>
+                </div>
+            </div>
+
+            <div class="hero-hanko" aria-hidden="true">
+                <span>雫</span>
+            </div>
+
+            <div class="hero-footer container">
+                <a href="#about" class="scroll-hint">
+                    <span class="scroll-line"></span>
+                    <span data-i18n="hero_scroll">Aşak</span>
+                </a>
+                <div class="hero-dots" id="hero-dots">
+                    <button class="hero-dot active" aria-label="Slide 1"><span></span></button>
+                    <button class="hero-dot" aria-label="Slide 2"><span></span></button>
+                    <button class="hero-dot" aria-label="Slide 3"><span></span></button>
                 </div>
             </div>
         </section>
 
-        <section class="about" id="about">
+        <!-- MARQUEE -->
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <span>Hand Drip <em>手淹れ</em></span><i>◦</i>
+                <span>Kyoto Cold Drip <em>水出し</em></span><i>◦</i>
+                <span>Uji Matcha <em>宇治抹茶</em></span><i>◦</i>
+                <span>Hojicha <em>ほうじ茶</em></span><i>◦</i>
+                <span>Katsu Sando <em>カツサンド</em></span><i>◦</i>
+                <span>Castella <em>カステラ</em></span><i>◦</i>
+                <span>Caspian Sea <em>海</em></span><i>◦</i>
+                <span>Hand Drip <em>手淹れ</em></span><i>◦</i>
+                <span>Kyoto Cold Drip <em>水出し</em></span><i>◦</i>
+                <span>Uji Matcha <em>宇治抹茶</em></span><i>◦</i>
+                <span>Hojicha <em>ほうじ茶</em></span><i>◦</i>
+                <span>Katsu Sando <em>カツサンド</em></span><i>◦</i>
+                <span>Castella <em>カステラ</em></span><i>◦</i>
+                <span>Caspian Sea <em>海</em></span><i>◦</i>
+            </div>
+        </div>
+
+        <!-- 2. ABOUT -->
+        <section class="about section-dark" id="about" data-kanji="雫">
             <div class="about-container container">
                 <div class="about-info">
-                    <span class="section-tag" id="about-tag" data-i18n="about_tag">WABI-SABI PELSEPESI</span>
-                    <h2 class="section-title" id="about-heading" data-i18n="about_heading">Asudalygyň we Arassa Tagamyň Oazisi</h2>
-                    <p class="about-text" id="about-p1" data-i18n="about_p1">
-                        Tokionyň Hiroo etrabynyň inçe we ýakyn köçelerinden ylham alan HIROO Kofe & Kitchen, Aşgabadyň merkezine ýapon minimalizminiň we skandinaw rahatlygynyň ajaýyp garyndysyny getirýär. Biziň giňişligimiz Wabi-Sabi-niň esasy pelsepesi bolan - tebigy kemçiliklerde, çig mallarda we dymmaklykda gözelligi tapmak düşünjesine esaslanýar.
-                    </p>
-                    <p class="about-text" id="about-p2" data-i18n="about_p2">
-                        Abraýly Restaurant & Bar Design Awards baýragyna dalaşgär görkezilen binagärlik konsepsiýamyz sowuk we gaty betony, ýyly we tebigy agaç işlerini we ünsli hasaplanan çyralary birleşdirýär. Bu ýer, şäheriň galmagally sesinden uzaklaşyp, tagamyň, fakturanyň we pikirlenmegiň arassalygyna üns bermek üçün döredilen mukaddes ýerdir.
-                    </p>
-                    
-                    <div class="about-features-list">
-                        <div class="about-feat-item" data-i18n="about_feat_coffee"><i class="fa-solid fa-seedling"></i> Ýokary hilli kofe däneleri</div>
-                        <div class="about-feat-item" data-i18n="about_feat_baristas"><i class="fa-solid fa-mug-hot"></i> Baristalaryň ajaýyp işi</div>
-                        <div class="about-feat-item" data-i18n="about_feat_breakfasts"><i class="fa-solid fa-cheese"></i> Täze taýýarlanylan ertirlikler</div>
-                        <div class="about-feat-item" data-i18n="about_feat_rooftop"><i class="fa-solid fa-cloud-sun"></i> Üçekde ýerleşýän orunlar</div>
+                    <span class="section-tag"><b class="section-num">一</b><span data-i18n="about_tag">Bir damjanyň pelsepesi</span></span>
+                    <h2 class="section-title" data-i18n="about_heading">Haýal kofe. Asuda deňiz.</h2>
+                    <p class="about-text" data-i18n="about_p1">Şizuku (雫) ýapon dilinde bir damja suw diýmekdir. Biz kofehanamyzy kofäniň iň haýal we iň sabyrly pursadynyň — damjanyň üwelen kofeden geçýän pursadynyň hormatyna atlandyrdyk. Bu ýerde, Hazaryň kenarynda, biz Kiotonyň kissaten kofehanalarynyň bir asyrdan bäri edişi ýaly demleýäris: elde, terezide, duýgy bilen.</p>
+                    <p class="about-text" data-i18n="about_p2">Pawilýon ýakylan şou-sugi-ban kedr agajyndan, işlenmedik hek suwagyndan we derýa daşyndan guruldy. Gündiz ýagtylyk waşi kagyz perdelerinden, agşam bolsa kagyz fonarlardan düşýär. Bu ýerde hiç zat gygyrmaýar — şonuň üçin tolkunlaryň sesini eşidip bilersiňiz.</p>
+
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-value"><span class="counter" data-target="12">0</span></span>
+                            <span class="stat-label" data-i18n="stat_hours">sagat sowuk drip</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value"><span class="counter" data-target="4">0</span></span>
+                            <span class="stat-label" data-i18n="stat_origins">kofe gelip çykyşy</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value"><span class="counter" data-target="92">0</span>°</span>
+                            <span class="stat-label" data-i18n="stat_temp">suwuň temperaturasy</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value"><span class="counter" data-target="36">0</span></span>
+                            <span class="stat-label" data-i18n="stat_seats">deňze garaýan orun</span>
+                        </div>
                     </div>
                 </div>
-                
+
                 <div class="about-gallery">
-                    <div class="about-img-frame frame-main">
-                        <img src="assets/images/interior_1.webp" alt="HIROO Architectural Interior View" class="about-img hover-zoom" id="about-img-1">
+                    <div class="about-img-frame frame-main" data-parallax="0.06">
+                        <img src="https://images.unsplash.com/photo-1604578762246-41134e37f9cc?auto=format&fit=crop&w=1100&q=75" alt="Warm wooden dining table in a Japanese-style room" class="about-img" loading="lazy">
                     </div>
                     <div class="about-img-group">
-                        <div class="about-img-frame frame-sub">
-                            <img src="assets/images/interior_4.webp" alt="HIROO Concrete Columns and Warm Light" class="about-img hover-zoom" id="about-img-2">
+                        <div class="about-img-frame frame-sub" data-parallax="-0.04">
+                            <img src="https://images.unsplash.com/photo-1775765478818-e1ba68e1e136?auto=format&fit=crop&w=700&q=75" alt="Tokonoma alcove with a scroll and ikebana" class="about-img" loading="lazy">
                         </div>
-                        <div class="about-img-frame frame-sub">
-                            <img src="assets/images/interior_6.webp" alt="HIROO Cozy Seating Corner" class="about-img hover-zoom" id="about-img-3">
+                        <div class="about-img-frame frame-sub" data-parallax="0.03">
+                            <img src="https://images.unsplash.com/photo-1573756990369-50cdad6dbd03?auto=format&fit=crop&w=700&q=75" alt="Handmade ceramic bowl by the window" class="about-img" loading="lazy">
                         </div>
                     </div>
+                    <span class="about-caption">— 静けさ / shizukesa</span>
                 </div>
             </div>
         </section>
 
-        <section class="menu-experience" id="menu">
-            <div class="menu-container container">
-                <span class="section-tag tag-orange" id="menu-tag" data-i18n="menu_tag">ÝAPON REDAKTORLYK STILI</span>
-                <h2 class="section-title dark-text" id="menu-heading" data-i18n="menu_heading">Menýu Tejirbesi</h2>
-                
-                <div class="menu-tabs" id="menu-tabs-container">
-                    <button class="menu-tab-btn active" data-category="coffee" id="tab-coffee" data-i18n="menu_tab_coffee">Kofe Ýygyndysy</button>
-                    <button class="menu-tab-btn" data-category="signature" id="tab-signature" data-i18n="menu_tab_signature">Ýörite Içgiler</button>
-                    <button class="menu-tab-btn" data-category="breakfast" id="tab-breakfast" data-i18n="menu_tab_breakfast">Ertirlik & Branç</button>
-                    <button class="menu-tab-btn" data-category="desserts" id="tab-desserts" data-i18n="menu_tab_desserts">Özboluşly Desertler</button>
+        <!-- 3. RITUAL -->
+        <section class="ritual section-light" id="ritual" data-kanji="道">
+            <div class="container ritual-container">
+                <div class="ritual-head">
+                    <span class="section-tag tag-orange"><b class="section-num">二</b><span data-i18n="ritual_tag">Dört hereket</span></span>
+                    <h2 class="section-title dark-text" data-i18n="ritual_heading">Demlemek däbi</h2>
                 </div>
-                
+
+                <ol class="ritual-steps">
+                    <li class="ritual-step">
+                        <span class="ritual-kanji">挽</span>
+                        <span class="ritual-index">01 — hiku</span>
+                        <h3 class="ritual-title" data-i18n="ritual_1_t">Üwemek</h3>
+                        <p class="ritual-desc" data-i18n="ritual_1_d">Dänler her käse üçin aýratyn, deňiz duzy ýaly iri edilip, demlemezden birnäçe sekunt öň üwelýär.</p>
+                    </li>
+                    <li class="ritual-step">
+                        <span class="ritual-kanji">蒸</span>
+                        <span class="ritual-index">02 — musu</span>
+                        <h3 class="ritual-title" data-i18n="ritual_2_t">Açylmak</h3>
+                        <p class="ritual-desc" data-i18n="ritual_2_d">92° suwuň ilkinji guýulmasy. Kofe karbon gazyny çykarýança otuz sekunt garaşýarys.</p>
+                    </li>
+                    <li class="ritual-step">
+                        <span class="ritual-kanji">注</span>
+                        <span class="ritual-index">03 — sosogu</span>
+                        <h3 class="ritual-title" data-i18n="ritual_3_t">Guýmak</h3>
+                        <p class="ritual-desc" data-i18n="ritual_3_d">Gaz boýun çäýnekden haýal tegelekler — inçe, üzülmeýän suw sapagy.</p>
+                    </li>
+                    <li class="ritual-step">
+                        <span class="ritual-kanji">味</span>
+                        <span class="ritual-index">04 — ajiwau</span>
+                        <h3 class="ritual-title" data-i18n="ritual_4_t">Tagam</h3>
+                        <p class="ritual-desc" data-i18n="ritual_4_d">El bilen ýasalan keramikada hödürlenýär. Birneme sowamaga goýuň — süýjüligi ýuwaş-ýuwaşdan açylýar.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 4. MENU -->
+        <section class="menu-experience section-light" id="menu" data-kanji="味">
+            <div class="menu-container container">
+                <span class="section-tag tag-orange"><b class="section-num">三</b><span data-i18n="menu_tag">Möwsümleýin menýu</span></span>
+                <h2 class="section-title dark-text" data-i18n="menu_heading">Menýu</h2>
+
+                <div class="menu-tabs" id="menu-tabs-container" role="tablist">
+                    <button class="menu-tab-btn active" data-category="coffee" role="tab"><em>珈琲</em><span data-i18n="tab_coffee">Kofe</span></button>
+                    <button class="menu-tab-btn" data-category="signature" role="tab"><em>特製</em><span data-i18n="tab_signature">Awtorlyk içgiler</span></button>
+                    <button class="menu-tab-btn" data-category="kitchen" role="tab"><em>台所</em><span data-i18n="tab_kitchen">Aşhana</span></button>
+                    <button class="menu-tab-btn" data-category="sweets" role="tab"><em>甘味</em><span data-i18n="tab_sweets">Süýji tagamlar</span></button>
+                    <span class="menu-tab-indicator" id="menu-tab-indicator"></span>
+                </div>
+
                 <div class="menu-grid active" id="menu-grid-coffee">
-                    <div class="menu-card" data-category="coffee">
+                    <article class="menu-card">
                         <div class="menu-card-img-wrapper">
-                            <img src="assets/images/espresso.png" alt="Espresso" class="menu-card-img">
+                            <img src="https://images.unsplash.com/photo-1758221052634-33f352d1318b?auto=format&fit=crop&w=800&q=75" alt="Pour-over coffee" class="menu-card-img" loading="lazy">
+                            <span class="menu-card-jp">手淹れ</span>
                         </div>
                         <div class="menu-card-details">
                             <div class="menu-card-header">
-                                <h3 class="menu-item-title" data-i18n="menu_espresso_title">Espresso</h3>
-                                <span class="menu-item-price">35 TMT</span>
-                            </div>
-                            <p class="menu-item-desc" data-i18n="menu_espresso_desc">Ýeke-täk gelip çykyşy bolan ýörite Arabika dänelerinden taýýarlanylan, janly turşulygy we goýy şokolad tagamly goşa espresso.</p>
-                        </div>
-                    </div>
-                    <div class="menu-card" data-category="coffee">
-                        <div class="menu-card-img-wrapper">
-                            <img src="assets/images/cappuccino.png" alt="Cappuccino" class="menu-card-img">
-                        </div>
-                        <div class="menu-card-details">
-                            <div class="menu-card-header">
-                                <h3 class="menu-item-title" data-i18n="menu_cappuccino_title">Kapuçino</h3>
-                                <span class="menu-item-price">45 TMT</span>
-                            </div>
-                            <p class="menu-item-desc" data-i18n="menu_cappuccino_desc">Ýyly we süýji süýt bilen garylan, silky mikrogöbükli goşa espresso. Ajaýyp latte art sungaty bilen bezelen.</p>
-                        </div>
-                    </div>
-                    <div class="menu-card" data-category="coffee">
-                        <div class="menu-card-img-wrapper">
-                            <img src="assets/images/flat_white.png" alt="Flat White" class="menu-card-img">
-                        </div>
-                        <div class="menu-card-details">
-                            <div class="menu-card-header">
-                                <h3 class="menu-item-title" data-i18n="menu_flat_white_title">Flat White</h3>
-                                <span class="menu-item-price">48 TMT</span>
-                            </div>
-                            <p class="menu-item-desc" data-i18n="menu_flat_white_desc">Goşa ristretto şoty we inçe, ýumşak buglanan süýt bilen kofeniň güýçli tagamyny berýän içgi.</p>
-                        </div>
-                    </div>
-                    <div class="menu-card" data-category="coffee">
-                        <div class="menu-card-img-wrapper">
-                            <img src="assets/images/latte.png" alt="Latte" class="menu-card-img">
-                        </div>
-                        <div class="menu-card-details">
-                            <div class="menu-card-header">
-                                <h3 class="menu-item-title" data-i18n="menu_latte_title">Latte</h3>
-                                <span class="menu-item-price">50 TMT</span>
-                            </div>
-                            <p class="menu-item-desc" data-i18n="menu_latte_desc">Ýeňil mikrogöbük gatlagy bilen bezelen, goşa espresso we süýdüň amatly garyndysy.</p>
-                        </div>
-                    </div>
-                    <div class="menu-card" data-category="coffee">
-                        <div class="menu-card-img-wrapper">
-                            <img src="assets/images/raf.png" alt="Raf Coffee" class="menu-card-img">
-                        </div>
-                        <div class="menu-card-details">
-                            <div class="menu-card-header">
-                                <h3 class="menu-item-title" data-i18n="menu_raf_title">Raf Kofe</h3>
+                                <h3 class="menu-item-title" data-i18n="m_drip_t">Elde demlenen V60</h3>
                                 <span class="menu-item-price">55 TMT</span>
                             </div>
-                            <p class="menu-item-desc" data-i18n="menu_raf_desc">Goşa espresso, süýt we wanil şekeriniň bilelikde buglanmagy arkaly taýýarlanýan velvety garyndy.</p>
+                            <p class="menu-item-desc" data-i18n="m_drip_d">Efiopiýa Guji ýeke gelip çykyşly kofe, açyk gowrulan. Ýasemin, ak şetdaly we bergamot.</p>
                         </div>
-                    </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="menu-card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1531835207745-506a1bc035d8?auto=format&fit=crop&w=800&q=75" alt="Cold drip coffee over ice" class="menu-card-img" loading="lazy">
+                            <span class="menu-card-jp">水出し</span>
+                        </div>
+                        <div class="menu-card-details">
+                            <div class="menu-card-header">
+                                <h3 class="menu-item-title" data-i18n="m_cold_t">Kioto sowuk dripi</h3>
+                                <span class="menu-item-price">60 TMT</span>
+                            </div>
+                            <p class="menu-item-desc" data-i18n="m_cold_d">Buzly suw on iki sagadyň dowamynda damja-damja kofeden geçýär. Ýumşak, süýji, edil çakyr ýaly.</p>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="menu-card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1762402519375-a29d7971a761?auto=format&fit=crop&w=800&q=75" alt="Cappuccino with latte art" class="menu-card-img" loading="lazy">
+                            <span class="menu-card-jp">カプチーノ</span>
+                        </div>
+                        <div class="menu-card-details">
+                            <div class="menu-card-header">
+                                <h3 class="menu-item-title" data-i18n="m_capp_t">Kapuçino</h3>
+                                <span class="menu-item-price">45 TMT</span>
+                            </div>
+                            <p class="menu-item-desc" data-i18n="m_capp_d">Möwsümleýin espresso garyndysy, ýumşak süýt we üstünde lale şekilli latte-art.</p>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="menu-card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1579992357154-faf4bde95b3d?auto=format&fit=crop&w=800&q=75" alt="Flat white in a white cup" class="menu-card-img" loading="lazy">
+                            <span class="menu-card-jp">フラットホワイト</span>
+                        </div>
+                        <div class="menu-card-details">
+                            <div class="menu-card-header">
+                                <h3 class="menu-item-title" data-i18n="m_flat_t">Flat White</h3>
+                                <span class="menu-item-price">48 TMT</span>
+                            </div>
+                            <p class="menu-item-desc" data-i18n="m_flat_d">Goşa ristretto we inçe mikroköpük. Süýtli şokoladyň we gowrulan hozuň tagamy.</p>
+                        </div>
+                    </article>
                 </div>
 
                 <div class="menu-grid" id="menu-grid-signature">
-                    <div class="menu-card" data-category="signature">
+                    <article class="menu-card">
                         <div class="menu-card-img-wrapper">
-                            <img src="assets/images/salted_caramel_latte.png" alt="Salted Caramel Latte" class="menu-card-img">
+                            <img src="https://images.unsplash.com/photo-1753700281029-b3d15df20ec4?auto=format&fit=crop&w=800&q=75" alt="Layered espresso tonic" class="menu-card-img" loading="lazy">
+                            <span class="menu-card-jp">柚子トニック</span>
                         </div>
                         <div class="menu-card-details">
                             <div class="menu-card-header">
-                                <h3 class="menu-item-title" data-i18n="menu_salted_caramel_title">Duzly Karamel Latte</h3>
-                                <span class="menu-item-price">60 TMT</span>
-                            </div>
-                            <p class="menu-item-desc" data-i18n="menu_salted_caramel_desc">Hususy taýýarlanylan duzly karamel sousy we deňiz duzunyň owuntyklary bilen garylan goşa espresso we süýt.</p>
-                        </div>
-                    </div>
-                    <div class="menu-card" data-category="signature">
-                        <div class="menu-card-img-wrapper">
-                            <img src="assets/images/lavender_coffee.png" alt="Lavender Coffee" class="menu-card-img">
-                        </div>
-                        <div class="menu-card-details">
-                            <div class="menu-card-header">
-                                <h3 class="menu-item-title" data-i18n="menu_lavender_title">Lawanda Latte</h3>
-                                <span class="menu-item-price">62 TMT</span>
-                            </div>
-                            <p class="menu-item-desc" data-i18n="menu_lavender_desc">Tebigy lawanda siropy we ajaýyp kofe köpürjigi bilen bezelen tagamly goşa espresso we buglanan süýt.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="menu-grid" id="menu-grid-breakfast">
-                    <div class="menu-card" data-category="breakfast">
-                        <div class="menu-card-img-wrapper">
-                            <img src="assets/images/shakshuka.png" alt="Shakshuka" class="menu-card-img">
-                        </div>
-                        <div class="menu-card-details">
-                            <div class="menu-card-header">
-                                <h3 class="menu-item-title" data-i18n="menu_shakshuka_title">Şakşuka</h3>
-                                <span class="menu-item-price">75 TMT</span>
-                            </div>
-                            <p class="menu-item-desc" data-i18n="menu_shakshuka_desc">Kumin bilen lezzetlendirilen, pomidor we burç sousynda bişirilen iki sany poached ýumurtgasy we çörek dilimleri.</p>
-                        </div>
-                    </div>
-                    <div class="menu-card" data-category="breakfast">
-                        <div class="menu-card-img-wrapper">
-                            <img src="assets/images/croissant_scrambled_eggs.png" alt="Croissant with scrambled eggs" class="menu-card-img">
-                        </div>
-                        <div class="menu-card-details">
-                            <div class="menu-card-header">
-                                <h3 class="menu-item-title" data-i18n="menu_croissant_title">Kruassan & Skrembl</h3>
-                                <span class="menu-item-price">65 TMT</span>
-                            </div>
-                            <p class="menu-item-desc" data-i18n="menu_croissant_desc">Ýumşak we tagamly kruassanyň içinde taýýarlanan krem-skrembl ýumurtgasy we gök önümler, çeri pomidory bilen.</p>
-                        </div>
-                    </div>
-                    <div class="menu-card" data-category="breakfast">
-                        <div class="menu-card-img-wrapper">
-                            <img src="assets/images/potato_pancake_poached_egg.png" alt="Potato pancake with poached egg" class="menu-card-img">
-                        </div>
-                        <div class="menu-card-details">
-                            <div class="menu-card-header">
-                                <h3 class="menu-item-title" data-i18n="menu_potato_pancakes_title">Kartoşkaly Guymak & Poached Ýumurtga</h3>
-                                <span class="menu-item-price">70 TMT</span>
-                            </div>
-                            <p class="menu-item-desc" data-i18n="menu_potato_pancakes_desc">Gyzgyn we gyzylymtyl bişirilen kartoşkaly hasbrown-lar, üstünde poached ýumurtgasy we gök önümler bilen.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="menu-grid" id="menu-grid-desserts">
-                    <div class="menu-card" data-category="desserts">
-                        <div class="menu-card-img-wrapper">
-                            <img src="assets/images/pistachio_tiramisu.png" alt="Pistachio Tiramisu" class="menu-card-img">
-                        </div>
-                        <div class="menu-card-details">
-                            <div class="menu-card-header">
-                                <h3 class="menu-item-title" data-i18n="menu_tiramisu_title">Pistah Tiramisu</h3>
+                                <h3 class="menu-item-title" data-i18n="m_yuzu_t">Ýuzu espresso toniki</h3>
                                 <span class="menu-item-price">58 TMT</span>
                             </div>
-                            <p class="menu-item-desc" data-i18n="menu_tiramisu_desc">Espresso siropynda ezilen biskwitler, pistahly maskarpone kremi we uşadylan pistah däneleri bilen bezelen.</p>
+                            <p class="menu-item-desc" data-i18n="m_yuzu_d">Ýapon sitrusy ýuzu, tonik we buzuň üstüne guýlan goşa espresso. Kenardaky tomus säheri ýaly şadyýan.</p>
                         </div>
-                    </div>
-                    <div class="menu-card" data-category="desserts">
+                    </article>
+                    <article class="menu-card">
                         <div class="menu-card-img-wrapper">
-                            <img src="assets/images/basque_cheesecake.png" alt="Basque Burnt Cheesecake" class="menu-card-img">
+                            <img src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13?auto=format&fit=crop&w=800&q=75" alt="Latte surrounded by coffee beans" class="menu-card-img" loading="lazy">
+                            <span class="menu-card-jp">黒蜜ラテ</span>
                         </div>
                         <div class="menu-card-details">
                             <div class="menu-card-header">
-                                <h3 class="menu-item-title" data-i18n="menu_cheesecake_title">Bask Çizkegi</h3>
-                                <span class="menu-item-price">55 TMT</span>
+                                <h3 class="menu-item-title" data-i18n="m_kuro_t">Kuromitsu latte</h3>
+                                <span class="menu-item-price">56 TMT</span>
                             </div>
-                            <p class="menu-item-desc" data-i18n="menu_cheesecake_desc">Daşy karamelize bolan we içi ýumşak, agzyňda ereýän meşhur Bask burnt çizkegi. Biziň iň meşhur desertimiz.</p>
+                            <p class="menu-item-desc" data-i18n="m_kuro_d">Okinawa gara şeker siropy, espresso we buglanan süýt, üstünden gowrulan kinako bilen.</p>
                         </div>
-                    </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="menu-card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1766426910014-63a302fa137e?auto=format&fit=crop&w=800&q=75" alt="Matcha latte with latte art" class="menu-card-img" loading="lazy">
+                            <span class="menu-card-jp">宇治抹茶</span>
+                        </div>
+                        <div class="menu-card-details">
+                            <div class="menu-card-header">
+                                <h3 class="menu-item-title" data-i18n="m_matcha_t">Udži matça latte</h3>
+                                <span class="menu-item-price">60 TMT</span>
+                            </div>
+                            <p class="menu-item-desc" data-i18n="m_matcha_d">Udžiden getirilen dabaraly derejeli matça, bambuk çasen bilen elde çalnan.</p>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="menu-card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1729259586624-fbff74362a5c?auto=format&fit=crop&w=800&q=75" alt="Roasted tea in a ceramic teapot" class="menu-card-img" loading="lazy">
+                            <span class="menu-card-jp">ほうじ茶</span>
+                        </div>
+                        <div class="menu-card-details">
+                            <div class="menu-card-header">
+                                <h3 class="menu-item-title" data-i18n="m_hoji_t">Hodžiça latte</h3>
+                                <span class="menu-item-price">54 TMT</span>
+                            </div>
+                            <p class="menu-item-desc" data-i18n="m_hoji_d">Karamel we gowrulan tüwi tagamly gowrulan gök çaý. Kofeini az, ýyly we tüsseli.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="menu-grid" id="menu-grid-kitchen">
+                    <article class="menu-card">
+                        <div class="menu-card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1653220329192-ce4d725d352a?auto=format&fit=crop&w=800&q=75" alt="Japanese breakfast set on a tray" class="menu-card-img" loading="lazy">
+                            <span class="menu-card-jp">一汁三菜</span>
+                        </div>
+                        <div class="menu-card-details">
+                            <div class="menu-card-header">
+                                <h3 class="menu-item-title" data-i18n="m_set_t">Içidžu-sansaý ertirligi</h3>
+                                <span class="menu-item-price">95 TMT</span>
+                            </div>
+                            <p class="menu-item-desc" data-i18n="m_set_d">Bir çorba we üç tagam: miso, gril edilen Hazar balygy, tamagoýaki, turşy we bugda bişirilen tüwi.</p>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="menu-card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1670710029403-607db8eeec83?auto=format&fit=crop&w=800&q=75" alt="Katsu sandwiches" class="menu-card-img" loading="lazy">
+                            <span class="menu-card-jp">カツサンド</span>
+                        </div>
+                        <div class="menu-card-details">
+                            <div class="menu-card-header">
+                                <h3 class="menu-item-title" data-i18n="m_katsu_t">Katsu sando</h3>
+                                <span class="menu-item-price">78 TMT</span>
+                            </div>
+                            <p class="menu-item-desc" data-i18n="m_katsu_d">Panko bilen gowrulan towuk kotleti, tonkatsu sousy we ýumşak süýtli çörekde täze kelem.</p>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="menu-card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1775889184873-9d74b093e791?auto=format&fit=crop&w=800&q=75" alt="Salmon rice bowl" class="menu-card-img" loading="lazy">
+                            <span class="menu-card-jp">鮭丼</span>
+                        </div>
+                        <div class="menu-card-details">
+                            <div class="menu-card-header">
+                                <h3 class="menu-item-title" data-i18n="m_don_t">Laksly don</h3>
+                                <span class="menu-item-price">115 TMT</span>
+                            </div>
+                            <p class="menu-item-desc" data-i18n="m_don_d">Suşi tüwisi, duzlanan laks, ikura, şiso we ýumşak sarysy. Bir jamdaky okean.</p>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="menu-card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1614128867650-4d971a244a0a?auto=format&fit=crop&w=800&q=75" alt="Fluffy Japanese hotcakes with butter" class="menu-card-img" loading="lazy">
+                            <span class="menu-card-jp">ホットケーキ</span>
+                        </div>
+                        <div class="menu-card-details">
+                            <div class="menu-card-header">
+                                <h3 class="menu-item-title" data-i18n="m_hotcake_t">Ýapon hotkeýkleri</h3>
+                                <span class="menu-item-price">72 TMT</span>
+                            </div>
+                            <p class="menu-item-desc" data-i18n="m_hotcake_d">Bulut ýaly ýumşak, beýik pankeýkler, ýag we klen siropy bilen. Sargyt boýunça 20 minutda taýýarlanýar.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="menu-grid" id="menu-grid-sweets">
+                    <article class="menu-card">
+                        <div class="menu-card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1759324351433-c5a1063f8ac6?auto=format&fit=crop&w=800&q=75" alt="Slice of matcha layer cake" class="menu-card-img" loading="lazy">
+                            <span class="menu-card-jp">抹茶ミルクレープ</span>
+                        </div>
+                        <div class="menu-card-details">
+                            <div class="menu-card-header">
+                                <h3 class="menu-item-title" data-i18n="m_cake_t">Matça katly torty</h3>
+                                <span class="menu-item-price">62 TMT</span>
+                            </div>
+                            <p class="menu-item-desc" data-i18n="m_cake_d">Matça blinçikleriniň we ýeňil kremiň on iki gatlagy, üstünden Udži çaýynyň tozy.</p>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="menu-card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1775492477980-abad58a1b52b?auto=format&fit=crop&w=800&q=75" alt="Rice dumplings on skewers" class="menu-card-img" loading="lazy">
+                            <span class="menu-card-jp">みたらし団子</span>
+                        </div>
+                        <div class="menu-card-details">
+                            <div class="menu-card-header">
+                                <h3 class="menu-item-title" data-i18n="m_dango_t">Mitaraşi dango</h3>
+                                <span class="menu-item-price">38 TMT</span>
+                            </div>
+                            <p class="menu-item-desc" data-i18n="m_dango_d">Ýumşak tüwi şarjagazlary, ýeňil gril edilen we süýji soýa siropy bilen örtülen.</p>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="menu-card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1791071923195-3e99d57c3927?auto=format&fit=crop&w=800&q=75" alt="Golden castella sponge cake" class="menu-card-img" loading="lazy">
+                            <span class="menu-card-jp">カステラ</span>
+                        </div>
+                        <div class="menu-card-details">
+                            <div class="menu-card-header">
+                                <h3 class="menu-item-title" data-i18n="m_castella_t">Bal kastellasy</h3>
+                                <span class="menu-item-price">45 TMT</span>
+                            </div>
+                            <p class="menu-item-desc" data-i18n="m_castella_d">Nagasaki usulyndaky biskwit, meýdan güli baly bilen haýal bişirilen.</p>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="menu-card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1626497132810-f38eb29c5385?auto=format&fit=crop&w=800&q=75" alt="Dorayaki pancakes" class="menu-card-img" loading="lazy">
+                            <span class="menu-card-jp">どら焼き</span>
+                        </div>
+                        <div class="menu-card-details">
+                            <div class="menu-card-header">
+                                <h3 class="menu-item-title" data-i18n="m_dora_t">Doraýaki</h3>
+                                <span class="menu-item-price">40 TMT</span>
+                            </div>
+                            <p class="menu-item-desc" data-i18n="m_dora_d">Süýji azuki noýba pastasy bilen iki sany bally pankeýk. Her säher bişirilýän Tokio klassikasy.</p>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section class="signature-experience" id="experience">
+        <!-- 5. EXPERIENCE -->
+        <section class="signature-experience section-dark" id="experience" data-kanji="心">
             <div class="experience-container container">
-                <span class="section-tag" id="experience-tag" data-i18n="experience_tag">GURŞAWYŇ ASUDALYGY</span>
-                <h2 class="section-title" id="experience-heading" data-i18n="experience_heading">HIROO Gurşawy</h2>
-                
-                <div class="experience-grid" id="exp-cards-grid">
-                    <div class="experience-card glass-card" id="exp-card-coffee">
+                <span class="section-tag"><b class="section-num">四</b><span data-i18n="exp_tag">Şizukuda</span></span>
+                <h2 class="section-title" data-i18n="exp_heading">Bu ýerde size näme garaşýar</h2>
+
+                <div class="experience-grid">
+                    <div class="experience-card glass-card">
+                        <div class="exp-icon"><i class="fa-solid fa-sun"></i></div>
+                        <h3 class="exp-title" data-i18n="exp_sunset_t">Gün ýaşýan terrasa</h3>
+                        <p class="exp-desc" data-i18n="exp_sunset_d">Günbatara, suwa tarap seredýän pes ýassyklar we kedr pol. Altyn sagatda iň gowy ýer.</p>
+                    </div>
+                    <div class="experience-card glass-card">
                         <div class="exp-icon"><i class="fa-solid fa-mug-hot"></i></div>
-                        <h3 class="exp-title" data-i18n="exp_coffee_title">Ýörite Kofe</h3>
-                        <p class="exp-desc" data-i18n="exp_coffee_desc">Hususy saýlanan, gyzgyn we professional derejede taýýarlanylan Arabika kofe däneleri, ýörite elde taýýarlanan jamlarda hödürlenýär.</p>
+                        <h3 class="exp-title" data-i18n="exp_bar_t">Drip bary</h3>
+                        <p class="exp-desc" data-i18n="exp_bar_d">Stoluň başynda oturyň we her guýulyşy synlaň. Baristalarymyz soraglary halaýar.</p>
                     </div>
-                    <div class="experience-card glass-card" id="exp-card-desserts">
-                        <div class="exp-icon"><i class="fa-solid fa-cake-candles"></i></div>
-                        <h3 class="exp-title" data-i18n="exp_desserts_title">Özboluşly Desertler</h3>
-                        <p class="exp-desc" data-i18n="exp_desserts_desc">Biziň konditerlerimiz tarapyndan her gün täze taýýarlanýan häzirki zaman we ýapon görnüşli desertler.</p>
+                    <div class="experience-card glass-card">
+                        <div class="exp-icon"><i class="fa-solid fa-leaf"></i></div>
+                        <h3 class="exp-title" data-i18n="exp_tea_t">Çaý dabarasy</h3>
+                        <p class="exp-desc" data-i18n="exp_tea_d">Şenbe günleri çaý ussadymyz bilen alty myhmana çenli matça dabarasy.</p>
                     </div>
-                    <div class="experience-card glass-card" id="exp-card-music">
-                        <div class="exp-icon"><i class="fa-solid fa-music"></i></div>
-                        <h3 class="exp-title" data-i18n="exp_music_title">Janly Çykyşlar</h3>
-                        <p class="exp-desc" data-i18n="exp_music_desc">Käbir agşamlarda biziň myhmanlarymyz üçin ýörite guralýan asuda, akustiki saz çykyşlary.</p>
+                    <div class="experience-card glass-card">
+                        <div class="exp-icon"><i class="fa-solid fa-record-vinyl"></i></div>
+                        <h3 class="exp-title" data-i18n="exp_vinyl_t">Plastinka agşamlary</h3>
+                        <p class="exp-desc" data-i18n="exp_vinyl_d">Her anna güni gün ýaşandan soň plastinka tekjämizden siti-pop we jaz.</p>
                     </div>
-                    <div class="experience-card glass-card" id="exp-card-rooftop">
-                        <div class="exp-icon"><i class="fa-solid fa-mountain-city"></i></div>
-                        <h3 class="exp-title" data-i18n="exp_rooftop_title">Üçekdäki Ýerler</h3>
-                        <p class="exp-desc" data-i18n="exp_rooftop_desc">Aşgabadyň gijeki görnüşine seredip, açyk asmanyň astynda kofe we ertirlik başdan geçiriň.</p>
+                    <div class="experience-card glass-card">
+                        <div class="exp-icon"><i class="fa-solid fa-hands"></i></div>
+                        <h3 class="exp-title" data-i18n="exp_ceramic_t">Elde ýasalan keramika</h3>
+                        <p class="exp-desc" data-i18n="exp_ceramic_d">Her käsäni ýerli küýzegärler ýasaýar. Halasaňyz — öýüňize alyp gidiň.</p>
                     </div>
-                    <div class="experience-card glass-card" id="exp-card-brunch">
-                        <div class="exp-icon"><i class="fa-solid fa-egg"></i></div>
-                        <h3 class="exp-title" data-i18n="exp_brunch_title">Ertirlik & Branç</h3>
-                        <p class="exp-desc" data-i18n="exp_brunch_desc">Tebigy we arassa önümlerden taýýarlanylýan lezzetli we ýokumly ertilikler.</p>
+                    <div class="experience-card glass-card">
+                        <div class="exp-icon"><i class="fa-solid fa-seedling"></i></div>
+                        <h3 class="exp-title" data-i18n="exp_beans_t">Kofe dänesi öýe</h3>
+                        <p class="exp-desc" data-i18n="exp_beans_d">250 g-lyk gaplarda biziň gowrulan dänelerimiz — öý enjamyňyz üçin üweýäris.</p>
                     </div>
-                    <div class="experience-card glass-card" id="exp-card-wine">
-                        <div class="exp-icon"><i class="fa-solid fa-wine-glass"></i></div>
-                        <h3 class="exp-title" data-i18n="exp_wine_title">Kokteyller & Şerap</h3>
-                        <p class="exp-desc" data-i18n="exp_wine_desc">Tokionyň gijeki durmuşyndan ylham alan awtorlyk kokteylleri we ýokary hilli şerap ýygyndysy.</p>
+                    <div class="experience-card glass-card">
+                        <div class="exp-icon"><i class="fa-solid fa-book-open"></i></div>
+                        <h3 class="exp-title" data-i18n="exp_quiet_t">Asuda burç</h3>
+                        <p class="exp-desc" data-i18n="exp_quiet_d">Ýapon surat kitaplary we goşgy kitaphanasy bolan noutbuksyz zolak.</p>
                     </div>
-                    <div class="experience-card glass-card" id="exp-card-cozy">
-                        <div class="exp-icon"><i class="fa-solid fa-couch"></i></div>
-                        <h3 class="exp-title" data-i18n="exp_cozy_title">Ýyly Gurşaw</h3>
-                        <p class="exp-desc" data-i18n="exp_cozy_desc">Minimalist mebeller, ýumşak oturgyçlar, beton gurluşy we soraýjy çyralar bilen rahatlygy başdan geçiriň.</p>
-                    </div>
-                    <div class="experience-card glass-card" id="exp-card-workspace">
-                        <div class="exp-icon"><i class="fa-solid fa-wifi"></i></div>
-                        <h3 class="exp-title" data-i18n="exp_workspace_title">Işlemek üçin Amatly</h3>
-                        <p class="exp-desc" data-i18n="exp_workspace_desc">Frilanserler, dizaýnerler we programmistler üçin ýokary tizlikli internet we asuda iş burçlary.</p>
+                    <div class="experience-card glass-card">
+                        <div class="exp-icon"><i class="fa-solid fa-children"></i></div>
+                        <h3 class="exp-title" data-i18n="exp_family_t">Maşgala üçin</h3>
+                        <p class="exp-desc" data-i18n="exp_family_d">Çagalar menýusy, çaga oturgyçlary we terrasanyň ýanynda gum meýdançasy.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="gallery-section" id="gallery">
+        <!-- 6. GALLERY -->
+        <section class="gallery-section section-light" id="gallery" data-kanji="景">
             <div class="gallery-container container">
-                <span class="section-tag tag-orange" id="gallery-tag" data-i18n="gallery_tag">GALEREÝA HILI</span>
-                <h2 class="section-title dark-text" id="gallery-heading" data-i18n="gallery_heading">Wizual Journal</h2>
-                
+                <span class="section-tag tag-orange"><b class="section-num">五</b><span data-i18n="gallery_tag">Wizual gündelik</span></span>
+                <h2 class="section-title dark-text" data-i18n="gallery_heading">Günüň pursatlary</h2>
+
                 <div class="gallery-grid" id="masonry-gallery">
-                    <div class="gallery-item item-wide" id="gal-item-1">
-                        <img src="assets/images/interior_2.webp" alt="HIROO Cafe Main Counter & Lighting" class="gallery-img">
-                        <div class="gallery-item-overlay">
-                            <span class="gallery-item-title" data-i18n="gal_title_1">Binagärlik Dalaşgär</span>
-                        </div>
-                    </div>
-                    <div class="gallery-item" id="gal-item-2">
-                        <img src="assets/images/flat_white.png" alt="Silky Flat White Art" class="gallery-img">
-                        <div class="gallery-item-overlay">
-                            <span class="gallery-item-title" data-i18n="gal_title_2">Kofe Köpürjigi</span>
-                        </div>
-                    </div>
-                    <div class="gallery-item" id="gal-item-3">
-                        <img src="assets/images/interior_7.webp" alt="Wabi-Sabi Wood Panel Detail" class="gallery-img">
-                        <div class="gallery-item-overlay">
-                            <span class="gallery-item-title" data-i18n="gal_title_3">Tebigy Çig Mallar</span>
-                        </div>
-                    </div>
-                    <div class="gallery-item" id="gal-item-4">
-                        <img src="assets/images/basque_cheesecake.png" alt="Burnt Basque Cheesecake" class="gallery-img">
-                        <div class="gallery-item-overlay">
-                            <span class="gallery-item-title" data-i18n="gal_title_4">Bask Çizkegi</span>
-                        </div>
-                    </div>
-                    <div class="gallery-item item-tall" id="gal-item-5">
-                        <img src="assets/images/interior_8.webp" alt="Japanese Rock Garden details" class="gallery-img">
-                        <div class="gallery-item-overlay">
-                            <span class="gallery-item-title" data-i18n="gal_title_5">Açyk Bag Ýerleri</span>
-                        </div>
-                    </div>
-                    <div class="gallery-item" id="gal-item-6">
-                        <img src="assets/images/shakshuka.png" alt="Steaming Shakshuka in pan" class="gallery-img">
-                        <div class="gallery-item-overlay">
-                            <span class="gallery-item-title" data-i18n="gal_title_6">Taýýarlanylan Branç</span>
-                        </div>
-                    </div>
-                    <div class="gallery-item item-wide" id="gal-item-7">
-                        <img src="assets/images/interior_9.webp" alt="Evening Atmosphere and Spotlight Columns" class="gallery-img">
-                        <div class="gallery-item-overlay">
-                            <span class="gallery-item-title" data-i18n="gal_title_7">Gijeki Gurşaw</span>
-                        </div>
-                    </div>
+                    <figure class="gallery-item item-wide" data-full="https://images.unsplash.com/photo-1767840272045-b1419f025dc3?auto=format&fit=crop&w=1800&q=80">
+                        <img src="https://images.unsplash.com/photo-1767840272045-b1419f025dc3?auto=format&fit=crop&w=1100&q=75" alt="Cozy wooden café interior" class="gallery-img" loading="lazy">
+                        <figcaption class="gallery-item-overlay"><span class="gallery-item-title" data-i18n="gal_1">Säher ýagtylygy</span></figcaption>
+                    </figure>
+                    <figure class="gallery-item" data-full="https://images.unsplash.com/photo-1759259639356-7c6e74eed1ec?auto=format&fit=crop&w=1800&q=80">
+                        <img src="https://images.unsplash.com/photo-1759259639356-7c6e74eed1ec?auto=format&fit=crop&w=700&q=75" alt="Pouring water into a pour-over dripper" class="gallery-img" loading="lazy">
+                        <figcaption class="gallery-item-overlay"><span class="gallery-item-title" data-i18n="gal_2">Elde demlemek</span></figcaption>
+                    </figure>
+                    <figure class="gallery-item item-tall" data-full="https://images.unsplash.com/photo-1764445274424-47bbc216073b?auto=format&fit=crop&w=1800&q=80">
+                        <img src="https://images.unsplash.com/photo-1764445274424-47bbc216073b?auto=format&fit=crop&w=700&q=75" alt="Traditional Japanese room with garden view" class="gallery-img" loading="lazy">
+                        <figcaption class="gallery-item-overlay"><span class="gallery-item-title" data-i18n="gal_3">Çaý otagy</span></figcaption>
+                    </figure>
+                    <figure class="gallery-item" data-full="https://images.unsplash.com/photo-1642326893222-9f6576a3279e?auto=format&fit=crop&w=1800&q=80">
+                        <img src="https://images.unsplash.com/photo-1642326893222-9f6576a3279e?auto=format&fit=crop&w=700&q=75" alt="Camel walking along a sea beach" class="gallery-img" loading="lazy">
+                        <figcaption class="gallery-item-overlay"><span class="gallery-item-title" data-i18n="gal_4">Hazar kenary</span></figcaption>
+                    </figure>
+                    <figure class="gallery-item" data-full="https://images.unsplash.com/photo-1612058060757-aa8f7f66e687?auto=format&fit=crop&w=1800&q=80">
+                        <img src="https://images.unsplash.com/photo-1612058060757-aa8f7f66e687?auto=format&fit=crop&w=700&q=75" alt="Stack of handmade ceramic plates" class="gallery-img" loading="lazy">
+                        <figcaption class="gallery-item-overlay"><span class="gallery-item-title" data-i18n="gal_5">Ýerli keramika</span></figcaption>
+                    </figure>
+                    <figure class="gallery-item" data-full="https://images.unsplash.com/photo-1775492477980-abad58a1b52b?auto=format&fit=crop&w=1800&q=80">
+                        <img src="https://images.unsplash.com/photo-1775492477980-abad58a1b52b?auto=format&fit=crop&w=700&q=75" alt="Grilled mochi skewers" class="gallery-img" loading="lazy">
+                        <figcaption class="gallery-item-overlay"><span class="gallery-item-title" data-i18n="gal_6">Gril edilen dango</span></figcaption>
+                    </figure>
+                    <figure class="gallery-item item-wide" data-full="https://images.unsplash.com/photo-1532713107108-dfb5d8d2fc42?auto=format&fit=crop&w=1800&q=80">
+                        <img src="https://images.unsplash.com/photo-1532713107108-dfb5d8d2fc42?auto=format&fit=crop&w=1100&q=75" alt="Barista pouring latte art" class="gallery-img" loading="lazy">
+                        <figcaption class="gallery-item-overlay"><span class="gallery-item-title" data-i18n="gal_7">Baristanyň elleri</span></figcaption>
+                    </figure>
+                    <figure class="gallery-item" data-full="https://images.unsplash.com/photo-1574676586192-b360ba6c885c?auto=format&fit=crop&w=1800&q=80">
+                        <img src="https://images.unsplash.com/photo-1574676586192-b360ba6c885c?auto=format&fit=crop&w=700&q=75" alt="Calm sea at dusk" class="gallery-img" loading="lazy">
+                        <figcaption class="gallery-item-overlay"><span class="gallery-item-title" data-i18n="gal_8">Asuda suw</span></figcaption>
+                    </figure>
+                    <figure class="gallery-item" data-full="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1800&q=80">
+                        <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=700&q=75" alt="Freshly roasted coffee beans" class="gallery-img" loading="lazy">
+                        <figcaption class="gallery-item-overlay"><span class="gallery-item-title" data-i18n="gal_9">Täze gowrulan</span></figcaption>
+                    </figure>
                 </div>
             </div>
         </section>
 
-        <section class="location-section" id="location">
+        <!-- 7. LOCATION -->
+        <section class="location-section section-dark" id="location" data-kanji="海">
             <div class="location-container container">
-                <span class="section-tag" id="location-tag" data-i18n="location_tag">BIZE GELIŇ</span>
-                <h2 class="section-title" id="location-heading" data-i18n="location_heading">HIROO-a Geliň</h2>
-                
+                <span class="section-tag"><b class="section-num">六</b><span data-i18n="loc_tag">Bize geliň</span></span>
+                <h2 class="section-title" data-i18n="loc_heading">Deňziň edil ýanynda</h2>
+
                 <div class="location-layout">
-                    <div class="map-wrapper" id="custom-map-frame">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12590.910619570162!2d58.4077673!3d37.913428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f6ffd0045667fe3%3A0x7d947436488f7bca!2sHiroo%20%7C%20Japanese%20Specialty%20Coffee!5e0!3m2!1sen!2s!4v1780000000000!5m2!1sen!2s" 
-                            width="100%" 
-                            height="100%" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
+                    <div class="map-wrapper">
+                        <iframe
+                            src="https://maps.google.com/maps?q=Awaza%2C%20Turkmenbashi&z=13&output=embed"
+                            width="100%"
+                            height="100%"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"
-                            title="HIROO Cafe Google Map Location">
+                            title="Map: Awaza, Caspian coast">
                         </iframe>
+                        <div class="sunset-chip" id="sunset-chip">
+                            <i class="fa-solid fa-sun"></i>
+                            <span data-i18n="sunset_label">Şu gün gün ýaşýar</span>
+                            <strong id="sunset-time">--:--</strong>
+                        </div>
                     </div>
-                    
+
                     <div class="info-wrapper">
                         <div class="info-grid">
-                            <div class="info-card glass-card" id="contact-info-card">
-                                <h3 class="info-card-title" data-i18n="loc_contact_title">Salgymyz we Kontakt</h3>
-                                <p class="info-item" data-i18n="loc_address"><i class="fa-solid fa-location-dot"></i> 9-njy mikroraýon, Oguz han köçesi, 5-nji geçelge, 7/4 jaý, Aşgabat</p>
-                                <p class="info-item" data-i18n="loc_phone"><i class="fa-solid fa-phone"></i> +993 62 222775 / +993 862222775</p>
-                                <p class="info-item" data-i18n="loc_email"><i class="fa-solid fa-envelope"></i> hello@hiroocoffee.com</p>
-                                <p class="info-item" data-i18n="loc_hours"><i class="fa-solid fa-clock"></i> Her gün: 09:00 - 22:00</p>
+                            <div class="info-card glass-card">
+                                <h3 class="info-card-title" data-i18n="loc_contact_title">Salgy we habarlaşmak</h3>
+                                <p class="info-item"><i class="fa-solid fa-location-dot"></i> <span data-i18n="loc_address">Awaza, Deňizýaka seýilgähi, 12-nji pawilýon, Türkmenbaşy</span></p>
+                                <p class="info-item"><i class="fa-solid fa-phone"></i> <span>+993 00 123456</span></p>
+                                <p class="info-item"><i class="fa-solid fa-envelope"></i> <span>hello@shizuku.example</span></p>
+                                <p class="info-item"><i class="fa-solid fa-clock"></i> <span data-i18n="loc_hours">Her gün: 08:00 – 23:00</span></p>
                             </div>
-                            
-                            <div class="info-card glass-card" id="accessibility-info-card">
-                                <h3 class="info-card-title" data-i18n="loc_access_title">Amatlyklar we Elýeterlilik</h3>
+
+                            <div class="info-card glass-card">
+                                <h3 class="info-card-title" data-i18n="loc_access_title">Amatlyklar</h3>
                                 <div class="amenities-list">
-                                    <span class="amenity-item" data-i18n="loc_wheelchair"><i class="fa-solid fa-circle-check"></i> Maýyplar arabasy üçin giriş</span>
-                                    <span class="amenity-item" data-i18n="loc_parking"><i class="fa-solid fa-circle-check"></i> Göz öňünde tutulan awtoduralga</span>
-                                    <span class="amenity-item" data-i18n="loc_seating"><i class="fa-solid fa-circle-check"></i> Maýyplar arabasy üçin ýerler</span>
-                                    <span class="amenity-item" data-i18n="loc_terrace"><i class="fa-solid fa-circle-check"></i> Açyk terrasa</span>
-                                    <span class="amenity-item" data-i18n="loc_rooftop"><i class="fa-solid fa-circle-check"></i> Üçekde ýerler</span>
-                                    <span class="amenity-item" data-i18n="loc_family"><i class="fa-solid fa-circle-check"></i> Maşgala üçin</span>
-                                    <span class="amenity-item" data-i18n="loc_tourist"><i class="fa-solid fa-circle-check"></i> Syýahatçylar üçin</span>
-                                    <span class="amenity-item" data-i18n="loc_free_parking"><i class="fa-solid fa-circle-check"></i> Mugt duralga</span>
-                                    <span class="amenity-item" data-i18n="loc_live_music"><i class="fa-solid fa-circle-check"></i> Janly sazly agşamlar</span>
+                                    <span class="amenity-item"><i class="fa-solid fa-umbrella-beach"></i> <span data-i18n="am_beach">Kenara çykalga</span></span>
+                                    <span class="amenity-item"><i class="fa-solid fa-wind"></i> <span data-i18n="am_terrace">Açyk terrasa</span></span>
+                                    <span class="amenity-item"><i class="fa-solid fa-wifi"></i> <span data-i18n="am_wifi">Mugt Wi-Fi</span></span>
+                                    <span class="amenity-item"><i class="fa-solid fa-square-parking"></i> <span data-i18n="am_parking">Awtoduralga</span></span>
+                                    <span class="amenity-item"><i class="fa-solid fa-wheelchair"></i> <span data-i18n="am_access">Maýyplar arabasy üçin giriş</span></span>
+                                    <span class="amenity-item"><i class="fa-solid fa-paw"></i> <span data-i18n="am_pets">Öý haýwanlary bilen bolýar</span></span>
+                                    <span class="amenity-item"><i class="fa-solid fa-carrot"></i> <span data-i18n="am_veg">Wegetarian tagamlar</span></span>
+                                    <span class="amenity-item"><i class="fa-solid fa-credit-card"></i> <span data-i18n="am_card">Kart bilen töleg</span></span>
                                 </div>
                             </div>
                         </div>
@@ -438,60 +605,73 @@
             </div>
         </section>
 
-        <section class="reservation-section" id="reserve">
-            <div class="res-glowing-sun-bg" id="res-glowing-sun-element"></div>
-            
+        <!-- 8. RESERVATION -->
+        <section class="reservation-section section-light" id="reserve" data-kanji="席">
+            <div class="res-glowing-sun-bg"></div>
+
             <div class="reservation-container container">
                 <div class="reservation-box glass-card" id="booking-box">
-                    <span class="section-tag tag-orange" id="booking-tag" data-i18n="book_tag">HIROO TEJIRBESI</span>
-                    <h2 class="section-title dark-text" id="booking-heading" data-i18n="book_heading">Stoluňyzy Sargaň</h2>
-                    <p class="reservation-desc" data-i18n="book_desc">
-                        Ýörite kofe we ajaýyp branç üçin asuda we amatly stoly şu günden sargaň.
-                    </p>
-                    
-                    <form class="reservation-form" id="booking-form">
+                    <span class="section-tag tag-orange"><b class="section-num">七</b><span data-i18n="book_tag">Stol sargyt</span></span>
+                    <h2 class="section-title dark-text" id="booking-heading" data-i18n="book_heading">Deňze garaýan stol</h2>
+                    <p class="reservation-desc" id="booking-desc" data-i18n="book_desc">Drip barda orun, terrasada stol ýa-da şenbe günki çaý dabarasyna ýer sargyt ediň.</p>
+
+                    <form class="reservation-form" id="booking-form" novalidate>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="book-name" data-i18n="label_name">Adyňyz</label>
-                                <input type="text" id="book-name" required data-i18n-placeholder="placeholder_name" placeholder="Mysal üçin: Anton Wizzhachi">
+                                <input type="text" id="book-name" required autocomplete="name" data-i18n-placeholder="ph_name" placeholder="Meselem: Aýna">
                             </div>
                             <div class="form-group">
                                 <label for="book-phone" data-i18n="label_phone">Telefon belgiňiz</label>
-                                <input type="tel" id="book-phone" required data-i18n-placeholder="placeholder_phone" placeholder="+993 62 222775">
+                                <input type="tel" id="book-phone" required autocomplete="tel" placeholder="+993 __ ______">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="book-date" data-i18n="label_date">Senäni saýlaň</label>
+                                <label for="book-date" data-i18n="label_date">Sene</label>
                                 <input type="date" id="book-date" required>
                             </div>
                             <div class="form-group">
-                                <label for="book-time" data-i18n="label_time">Wagty saýlaň</label>
-                                <input type="time" id="book-time" required>
+                                <label for="book-time" data-i18n="label_time">Wagt</label>
+                                <input type="time" id="book-time" required min="08:00" max="22:00">
                             </div>
                             <div class="form-group">
                                 <label for="book-guests" data-i18n="label_guests">Myhman sany</label>
                                 <select id="book-guests" required>
-                                    <option value="1" data-i18n="guests_1">1 Adam</option>
-                                    <option value="2" selected data-i18n="guests_2">2 Adam</option>
-                                    <option value="3" data-i18n="guests_3">3 Adam</option>
-                                    <option value="4" data-i18n="guests_4">4 Adam</option>
-                                    <option value="5" data-i18n="guests_5">5+ Adam</option>
+                                    <option value="1" data-i18n="guests_1">1 adam</option>
+                                    <option value="2" selected data-i18n="guests_2">2 adam</option>
+                                    <option value="3" data-i18n="guests_3">3 adam</option>
+                                    <option value="4" data-i18n="guests_4">4 adam</option>
+                                    <option value="5" data-i18n="guests_5">5+ adam</option>
                                 </select>
                             </div>
                         </div>
+
+                        <fieldset class="form-group zone-group">
+                            <legend data-i18n="label_zone">Ýer saýlaň</legend>
+                            <div class="zone-options">
+                                <label class="zone-chip"><input type="radio" name="zone" value="terrace" checked><span><em>縁側</em><b data-i18n="zone_terrace">Terrasa</b></span></label>
+                                <label class="zone-chip"><input type="radio" name="zone" value="bar"><span><em>カウンター</em><b data-i18n="zone_bar">Drip bar</b></span></label>
+                                <label class="zone-chip"><input type="radio" name="zone" value="hall"><span><em>座敷</em><b data-i18n="zone_hall">Zal</b></span></label>
+                                <label class="zone-chip"><input type="radio" name="zone" value="tea"><span><em>茶会</em><b data-i18n="zone_tea">Çaý dabarasy</b></span></label>
+                            </div>
+                        </fieldset>
+
                         <div class="form-group">
-                            <label for="book-requests" data-i18n="label_requests">Ýörite islegleriňiz</label>
-                            <textarea id="book-requests" rows="3" data-i18n-placeholder="placeholder_requests" placeholder="Üçekde ýer, maýyplar arabasy üçin ýer we ş.m."></textarea>
+                            <label for="book-requests" data-i18n="label_requests">Goşmaça islegler</label>
+                            <textarea id="book-requests" rows="3" data-i18n-placeholder="ph_requests" placeholder="Doglan gün, çaga oturgyjy, allergiýa we ş.m."></textarea>
                         </div>
-                        
-                        <button type="submit" class="btn btn-primary btn-block" id="booking-submit-btn" data-i18n="book_btn">Stoly Sargamak</button>
+
+                        <p class="form-error" id="form-error" data-i18n="form_error" hidden>Adyňyzy, telefon belgiňizi, senäni we wagty dolduryň.</p>
+
+                        <button type="submit" class="btn btn-primary btn-block" data-i18n="book_btn">Sargyt et</button>
                     </form>
-                    
-                    <div class="booking-success-msg" id="booking-success" style="display: none;">
-                        <i class="fa-solid fa-circle-check"></i>
-                        <h3 data-i18n="book_success_title">Stol Üstünlikli Sargalandy</h3>
-                        <p data-i18n="book_success_desc">Bize gelmegiňize sabyrsyzlyk bilen garaşýarys. Sargyt maglumatlary telefon belgiňize SMS arkaly iberiler.</p>
+
+                    <div class="booking-success-msg" id="booking-success" hidden>
+                        <div class="success-enso"><img src="assets/images/logo.svg" alt=""></div>
+                        <h3 data-i18n="book_success_t">Sargydyňyz kabul edildi</h3>
+                        <p data-i18n="book_success_d">Stoly tassyklamak üçin ýakyn wagtda size jaň ederis.</p>
+                        <button type="button" class="btn btn-ghost" id="booking-again" data-i18n="book_again">Täze sargyt</button>
                     </div>
                 </div>
             </div>
@@ -502,48 +682,63 @@
         <div class="footer-container container">
             <div class="footer-brand">
                 <div class="footer-logo-block">
-                    <img src="assets/images/logo.png" alt="HIROO Logo" class="footer-logo">
-                    <span class="footer-title">HIROO</span>
+                    <img src="assets/images/logo.svg" alt="SHIZUKU logo" class="footer-logo">
+                    <span class="footer-title">SHIZUKU</span>
                 </div>
-                <p class="footer-tagline" data-i18n="footer_tagline">Ýapon Ýörite Kofesi • Branç • Naharhana</p>
+                <p class="footer-tagline" data-i18n="footer_tagline">Dripli kofe we ýapon aşhanasy Hazar kenarynda</p>
                 <div class="footer-socials">
-                    <a href="https://instagram.com/hiroo.ashgabat" target="_blank" aria-label="HIROO Instagram" id="social-instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" aria-label="HIROO Facebook" id="social-facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" aria-label="HIROO Telegram" id="social-telegram"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
                 </div>
             </div>
-            
+
             <div class="footer-links-group">
                 <h4 class="footer-group-title" data-i18n="footer_nav_title">Nawigasiýa</h4>
-                <a href="#about" class="footer-link" data-i18n="footer_link_story">Biz barada</a>
-                <a href="#menu" class="footer-link" data-i18n="footer_link_menu">Menýu</a>
-                <a href="#experience" class="footer-link" data-i18n="footer_link_amenities">Amatlyklar</a>
-                <a href="#gallery" class="footer-link" data-i18n="footer_link_gallery">Surat Žurnaly</a>
-                <a href="#location" class="footer-link" data-i18n="footer_link_location">Bize Geliň</a>
+                <a href="#about" class="footer-link" data-i18n="nav_about">Biz barada</a>
+                <a href="#ritual" class="footer-link" data-i18n="nav_ritual">Däp-dessur</a>
+                <a href="#menu" class="footer-link" data-i18n="nav_menu">Menýu</a>
+                <a href="#gallery" class="footer-link" data-i18n="nav_gallery">Galereýa</a>
+                <a href="#location" class="footer-link" data-i18n="nav_location">Salgymyz</a>
             </div>
-            
+
             <div class="footer-links-group">
-                <h4 class="footer-group-title" data-i18n="footer_hours_title">Iş Wagtymyz</h4>
-                <p class="footer-time-info"><strong data-i18n="footer_days">Duşenbe - Ýekşenbe</strong></p>
-                <p class="footer-time-info">09:00 AM &ndash; 10:00 PM</p>
-                <p class="footer-time-info" data-i18n="footer_kitchen">Aşhana 21:30-da ýapylýar</p>
+                <h4 class="footer-group-title" data-i18n="footer_hours_title">Iş wagty</h4>
+                <p class="footer-time-info"><strong data-i18n="footer_days">Duşenbe – Ýekşenbe</strong></p>
+                <p class="footer-time-info">08:00 &ndash; 23:00</p>
+                <p class="footer-time-info" data-i18n="footer_kitchen">Aşhana 22:00-da ýapylýar</p>
             </div>
-            
+
             <div class="footer-links-group">
                 <h4 class="footer-group-title" data-i18n="footer_contact_title">Habarlaşmak</h4>
-                <p class="footer-contact-info">Oguzhan Street 7/4, Ashgabat</p>
-                <p class="footer-contact-info">Phone: +993 62 222775</p>
-                <p class="footer-contact-info">Email: hello@hiroocoffee.com</p>
+                <p class="footer-contact-info" data-i18n="footer_address">Awaza, 12-nji pawilýon</p>
+                <p class="footer-contact-info">+993 00 123456</p>
+                <p class="footer-contact-info">hello@shizuku.example</p>
             </div>
         </div>
-        
+
         <div class="footer-bottom">
             <div class="container footer-bottom-layout">
-                <p class="copyright" data-i18n="footer_copyright">&copy; 2026 HIROO Coffee & Kitchen. Ähli hukuklar goralan.</p>
-                <p class="footer-author" data-i18n="footer_author">Wabi-Sabi ruhunda dizaýn edilen</p>
+                <p class="copyright" data-i18n="footer_copyright">© 2026 SHIZUKU Coffee & Kitchen. Ähli hukuklar goralan.</p>
+                <p class="footer-author"><span class="jp">一期一会</span> — <span data-i18n="footer_author">her duşuşyk gaýtalanmaýar</span> · <a href="https://unsplash.com" target="_blank" rel="noopener" data-i18n="footer_credit">Suratlar: Unsplash</a></p>
             </div>
         </div>
     </footer>
+
+    <div class="lightbox" id="lightbox" hidden>
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+        <button class="lightbox-nav prev" id="lightbox-prev" aria-label="Previous"><i class="fa-solid fa-arrow-left"></i></button>
+        <figure class="lightbox-figure">
+            <img id="lightbox-img" alt="">
+            <figcaption id="lightbox-caption"></figcaption>
+        </figure>
+        <button class="lightbox-nav next" id="lightbox-next" aria-label="Next"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+
+    <a href="#hero-section" class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="21" pathLength="100" id="back-to-top-ring"/></svg>
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
 
     <script src="js/script.js"></script>
 </body>
